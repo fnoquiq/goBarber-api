@@ -16,7 +16,7 @@ interface IRequest {
 class updateUserAvatarService {
   constructor(
     @inject('UsersRepository') private usersRepository: IUsersRepository,
-  ) { }
+  ) {}
 
   public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
     const user = await this.usersRepository.findById(user_id);
