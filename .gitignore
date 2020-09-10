@@ -1,8 +1,9 @@
 node_modules
 dist
 build
-.vscode
-.idea
-
 tmp/*
 !tmp/.gitkeep
+coverage
+.DS_Store
+**/.DS_Store
+.idea
