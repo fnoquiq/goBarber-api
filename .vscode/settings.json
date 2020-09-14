@@ -5,6 +5,7 @@
     "gobarber",
     "lcov",
     "readonly",
+    "smtp",
     "tsyringe",
     "typeorm",
     "uuidv"
