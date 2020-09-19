@@ -1,9 +1,9 @@
 import { getRepository, Not, Repository } from 'typeorm';
 
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
-import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
 import User from '@modules/users/infra/typeorm/entities/User';
-import IFindAllProviderDTO from '@modules/users/dtos/IFindAllProvidersDTO';
+import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
+import IFindAllProvidersDTO from '@modules/users/dtos/IFindAllProvidersDTO';
 
 class UsersRepository implements IUsersRepository {
   private ormRepository: Repository<User>;
@@ -12,21 +12,9 @@ class UsersRepository implements IUsersRepository {
     this.ormRepository = getRepository(User);
   }
 
-  public async findById(id: string): Promise<User | undefined> {
-    const user = await this.ormRepository.findOne(id);
-
-    return user;
-  }
-
-  public async findByEmail(email: string): Promise<User | undefined> {
-    const user = await this.ormRepository.findOne({ where: { email } });
-
-    return user;
-  }
-
   public async findAllProviders({
     except_user_id,
-  }: IFindAllProviderDTO): Promise<User[]> {
+  }: IFindAllProvidersDTO): Promise<User[]> {
     let users: User[];
 
     if (except_user_id) {
@@ -42,10 +30,20 @@ class UsersRepository implements IUsersRepository {
     return users;
   }
 
+  public async findById(id: string): Promise<User | undefined> {
+    const user = await this.ormRepository.findOne(id);
+    return user;
+  }
+
+  public async findByEmail(email: string): Promise<User | undefined> {
+    const user = await this.ormRepository.findOne({ where: { email } });
+    return user;
+  }
+
   public async create(userData: ICreateUserDTO): Promise<User> {
     const user = this.ormRepository.create(userData);
 
-    this.ormRepository.save(user);
+    await this.ormRepository.save(user);
 
     return user;
   }
