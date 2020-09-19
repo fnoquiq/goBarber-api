@@ -8,4 +8,6 @@
 
   - Executar `yarn` para instalar a dependências;
 
-  - Executar `yarn dev:server` para levantar **api**.
+  - Executar `yarn typeorm migration:run` para rodar as migrations;
+
+  - Executar `yarn dev:server` para levantar o servidor.
