@@ -2,7 +2,11 @@
 
 ## :horse_racing: Iniciar a aplicação:
 
-- O primeiro passo é iniciar os containers do docker referentes ao banco de dados PostgreSQL. Para isso basta executar no terminal `docker run --name gobarber-pg -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres `.
+- O primeiro passo é iniciar os containers do docker referentes aos banco de dados. Para isso basta executar no terminal:
+
+  - PostgreSQL: `docker run --name gobarber-pg -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres`.
+
+  - MongoDB: `docker run --name gobarber-mongo -p 27017:27017 -d -t mongo`.
 
 - Após, levantar o container, crie um banco com o nome `gobarber`. Após isso, execute os seguintes comandos:
 
