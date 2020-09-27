@@ -7,6 +7,7 @@
     "gobarber",
     "gostack",
     "lcov",
+    "ratelimit",
     "readonly",
     "smtp",
     "tsyringe",
