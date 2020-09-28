@@ -17,3 +17,9 @@
   - Executar `yarn typeorm migration:run` para rodar as migrations;
 
 - Por fim, execute `yarn dev:server` para levantar o servidor.
+
+## :memo: Documentação:
+
+Para configurar o insomnia, clique no botão abaixo:
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=%5BBootcamp%20GoStack%5D%20GoBarber%202020&uri=https%3A%2F%2Fgithub.com%2Ffnoquiq%2Fgobarber-api%2Fblob%2Fmaster%2F.github%2Finsomnia%2Finsomnia.json)
